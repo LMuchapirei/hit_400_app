@@ -1,15 +1,13 @@
 # hit_400_app
-
-A new Flutter project.
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+#Run flutter packages get
+#Run the python main.py after installing requirements :pip install -r requirements.txt
+#Foward Port 8081 t0 Port 5000 using adb( to acccess local host on device)
+#Run flutter run -d (name of device/emulator) in the root of the project(same level as lib folder)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,

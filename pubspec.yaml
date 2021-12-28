@@ -37,6 +37,13 @@ dependencies:
   shared_preferences: ^0.4.3
   flutter_slidable: ^0.5.7
   hive: ^2.0.0
+  file_picker: ^3.0.2+2
+  firebase_core:
+  firebase_auth: ^1.4.1
+  settings_ui: 
+  google_sign_in:
+  mailer:
+  webview_flutter: ^2.0.9
 dev_dependencies:
   flutter_test:
     sdk: flutter

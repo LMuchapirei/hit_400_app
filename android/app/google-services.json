@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "519869371023",
+    "project_id": "hit400app",
+    "storage_bucket": "hit400app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519869371023:android:805ef2164b4b128d9f96fa",
+        "android_client_info": {
+          "package_name": "com.example.hit_400_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519869371023-tvfva0nd1rck02ml2l4gr33ca6rc3gab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hit_400_app",
+            "certificate_hash": "9dd7ba7e9d5758fcfd003af1a63435f1c8b9344f"
+          }
+        },
+        {
+          "client_id": "519869371023-7de8hseh2gs70dvop7rsol9j86q003pf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfMSLl3MKmfsfpNBXv4JrWuYx2_aR3zIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519869371023-7de8hseh2gs70dvop7rsol9j86q003pf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

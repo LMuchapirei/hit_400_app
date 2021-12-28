@@ -1,14 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hit_400_app/core/services/auth.dart';
 import 'package:hit_400_app/screens/home.dart';
-
 
 import 'signup.dart';
 
 const PrimaryColor = Color(0xFF2CB1BC);
 const FormColor = Color(0xFFF0F4F9);
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -190,15 +196,41 @@ class _FormState extends State<Form> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                      IconButton(icon: Icon(FontAwesomeIcons.facebook),onPressed: (){
-                        // handle facebook login
-                      },),
-                      IconButton(icon: Icon(FontAwesomeIcons.google),onPressed: (){
-                        //handle google login
-                      },),
-                      IconButton(icon: Icon(FontAwesomeIcons.facebook),onPressed: (){
-                        //handle twitter login
-                      },)
+                    // IconButton(icon: Icon(FontAwesomeIcons.facebook),onPressed: (){
+                    //   // handle facebook login
+                    // },),
+                    FutureBuilder(
+                        future:
+                            Authentication.initializeFirebase(context: context),
+                        builder: (context, snapshot) {
+                          if (snapshot.hasError) {
+                            return Text('Error Initializing Firebase');
+                          } else if (snapshot.connectionState ==
+                              ConnectionState.done) {
+                            return IconButton(
+                                icon: Icon(
+                                  FontAwesomeIcons.google,
+                                  color: Colors.red,
+                                ),
+                                onPressed: () async {
+                                  User user =
+                                      await Authentication.signInWithGoogle(
+                                          context);
+                                  if (user != null) {
+                                    Navigator.of(context)
+                                        .pushReplacement(MaterialPageRoute(
+                                      builder: (context) => MyHomePage(
+                                          title: 'Hit 4000 Home Page'),
+                                    ));
+                                  }
+                                }); //handle google login
+                          }
+                          return Text('');
+                        })
+
+                    // IconButton(icon: Icon(FontAwesomeIcons.facebook),onPressed: (){
+                    //   //handle twitter login
+                    // },)
                   ],
                 ),
               ))
